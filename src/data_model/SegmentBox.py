@@ -1,6 +1,6 @@
-from fast_trainer import PdfSegment
-from pdf_features import PdfPage
-from pdf_token_type_labels import TokenType
+from src.fast_trainer import PdfSegment
+from src.pdf_features import PdfPage
+from src.pdf_token_type_labels import TokenType
 from pydantic import BaseModel
 
 

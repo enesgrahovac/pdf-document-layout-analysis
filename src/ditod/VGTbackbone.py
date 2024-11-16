@@ -193,7 +193,6 @@ def build_PTM_VIT_Backbone(cfg):
 
     return PTM_VIT_Backbone(name, out_features, drop_path, img_size, pos_type, merge_type, model_kwargs)
 
-
 @BACKBONE_REGISTRY.register()
 def build_VGT_fpn_backbone(cfg, input_shape: ShapeSpec):
     """

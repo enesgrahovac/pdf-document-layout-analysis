@@ -11,7 +11,7 @@ from pdf_layout_analysis.run_pdf_layout_analysis_fast import analyze_pdf_fast
 from text_extraction.get_text_extraction import get_text_extraction
 from toc.get_toc import get_toc
 from visualization.get_visualization import get_visualization
-
+from controller import analyze_pdf_controller
 service_logger.info(f"Is PyTorch using GPU: {torch.cuda.is_available()}")
 
 app = FastAPI()
@@ -30,9 +30,8 @@ async def error():
 @app.post("/")
 @catch_exceptions
 async def run(file: UploadFile = File(...), fast: bool = Form(False), extraction_format: str = Form("")):
-    if fast:
-        return await run_in_threadpool(analyze_pdf_fast, file.file.read(), "", extraction_format)
-    return await run_in_threadpool(analyze_pdf, file.file.read(), "", extraction_format)
+    file_content = file.file.read() 
+    return analyze_pdf_controller(file_content, fast, extraction_format)
 
 
 @app.post("/save_xml/{xml_file_name}")

@@ -7,13 +7,11 @@ from data_model.SegmentBox import SegmentBox
 from ditod.VGTTrainer import VGTTrainer
 from extraction_formats.extract_formula_formats import extract_formula_format
 from extraction_formats.extract_table_formats import extract_table_format
-from vgt.get_json_annotations import get_annotations
-from vgt.get_model_configuration import get_model_configuration
-from vgt.get_most_probable_pdf_segments import get_most_probable_pdf_segments
-from vgt.get_reading_orders import get_reading_orders
+from vgt import get_annotations, get_model_configuration, \
+    get_most_probable_pdf_segments, get_reading_orders, \
+    create_word_grid, remove_word_grids
 from data_model.PdfImages import PdfImages
 from configuration import service_logger, JSON_TEST_FILE_PATH, IMAGES_ROOT_PATH
-from vgt.create_word_grid import create_word_grid, remove_word_grids
 from detectron2.checkpoint import DetectionCheckpointer
 from detectron2.data.datasets import register_coco_instances
 from detectron2.data import DatasetCatalog

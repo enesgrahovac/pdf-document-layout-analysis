@@ -27,6 +27,8 @@ def is_gpu_available():
 
 
 def get_model_configuration():
+    service_logger.info("SRC_PATH", SRC_PATH)
+    service_logger.info("ROOT_PATH", ROOT_PATH)
     parser = default_argument_parser()
     args, unknown = parser.parse_known_args()
     args.config_file = join(SRC_PATH, "model_configuration", f"doclaynet_VGT_cascade_PTM.yaml")

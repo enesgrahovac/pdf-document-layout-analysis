@@ -3,8 +3,7 @@ from lxml.etree import ElementBase
 from .PdfFont import PdfFont
 from .PdfTokenContext import PdfTokenContext
 from .Rectangle import Rectangle
-from ..pdf_token_type_labels.Label import Label
-from ..pdf_token_type_labels.TokenType import TokenType
+from ..pdf_token_type_labels import Label, TokenType
 
 
 class PdfToken:

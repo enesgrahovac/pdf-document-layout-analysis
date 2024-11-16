@@ -1,8 +1,6 @@
 from lxml.etree import ElementBase
 
-from .PdfFont import PdfFont
-from .PdfTokenContext import PdfTokenContext
-from .Rectangle import Rectangle
+import PdfFont, PdfTokenContext, Rectangle
 from pdf_token_type_labels import Label, TokenType
 
 

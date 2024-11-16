@@ -6,7 +6,7 @@ from PIL import Image
 from struct_eqtable import build_model
 
 from configuration import service_logger
-from data_model.PdfImages import PdfImages
+from data_model import PdfImages
 from fast_trainer.PdfSegment import PdfSegment
 from pdf_token_type_labels.TokenType import TokenType
 

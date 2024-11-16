@@ -4,7 +4,7 @@ import numpy as np
 from fast_trainer.PdfSegment import PdfSegment
 from pdf_features.PdfToken import PdfToken
 from pdf_features.Rectangle import Rectangle
-from data_model.SegmentBox import SegmentBox
+from data_model import SegmentBox
 from toc.data.TOCItem import TOCItem
 from toc.methods.two_models_v3_segments_context_2.Modes import Modes
 from toc.PdfSegmentation import PdfSegmentation

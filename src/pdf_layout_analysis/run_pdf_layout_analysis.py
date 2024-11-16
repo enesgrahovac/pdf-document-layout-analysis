@@ -3,14 +3,13 @@ import uuid
 from os.path import join
 from pathlib import Path
 from typing import AnyStr
-from data_model.SegmentBox import SegmentBox
+from data_model import SegmentBox, PdfImages
 from ditod.VGTTrainer import VGTTrainer
 from extraction_formats.extract_formula_formats import extract_formula_format
 from extraction_formats.extract_table_formats import extract_table_format
 from vgt import get_annotations, get_model_configuration, \
     get_most_probable_pdf_segments, get_reading_orders, \
     create_word_grid, remove_word_grids
-from data_model.PdfImages import PdfImages
 from configuration import service_logger, JSON_TEST_FILE_PATH, IMAGES_ROOT_PATH
 from detectron2.checkpoint import DetectionCheckpointer
 from detectron2.data.datasets import register_coco_instances

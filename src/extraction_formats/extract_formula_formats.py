@@ -1,7 +1,7 @@
 import io
 from PIL.Image import Image
 from rapid_latex_ocr import LatexOCR
-from data_model.PdfImages import PdfImages
+from data_model import PdfImages
 from fast_trainer.PdfSegment import PdfSegment
 from pdf_token_type_labels.TokenType import TokenType
 

@@ -25,10 +25,6 @@ from detectron2.modeling.backbone.fpn import LastLevelP6P7, LastLevelMaxPool
 from .VGTbeit import beit_base_patch16, dit_base_patch16, dit_large_patch16, beit_large_patch16, VGT_dit_base_patch16
 from .FeatureMerge import FeatureMerge
 
-__all__ = [
-    "build_VGT_fpn_backbone",
-]
-
 
 class PTM_VIT_Backbone(Backbone):
     """
@@ -216,6 +212,5 @@ def build_VGT_fpn_backbone(cfg, input_shape: ShapeSpec):
     )
     return backbone
 
-# Register the function if not already registered
 if 'build_VGT_fpn_backbone' not in BACKBONE_REGISTRY._obj_map:
     BACKBONE_REGISTRY.register(build_VGT_fpn_backbone)

@@ -14,3 +14,5 @@ from .VGTTrainer import VGTTrainer
 from .VGT import VGT
 
 from .utils import eval_and_show, load_gt_from_json, pub_load_gt_from_json
+
+__all__ = ["add_vit_config", "build_VGT_fpn_backbone", "DetrDatasetMapper", "VGTTrainer", "VGT", "eval_and_show", "load_gt_from_json", "pub_load_gt_from_json"]

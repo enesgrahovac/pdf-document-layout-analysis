@@ -193,27 +193,29 @@ def build_PTM_VIT_Backbone(cfg):
 
     return PTM_VIT_Backbone(name, out_features, drop_path, img_size, pos_type, merge_type, model_kwargs)
 
+def build_VGT_fpn_backbone(cfg, input_shape: ShapeSpec):
+    """
+    Create a VIT w/ FPN backbone.
+
+    Args:
+        cfg: a detectron2 CfgNode
+
+    Returns:
+        backbone (Backbone): backbone module, must be a subclass of :class:`Backbone`.
+    """
+    bottom_up = build_PTM_VIT_Backbone(cfg)
+    in_features = cfg.MODEL.FPN.IN_FEATURES
+    out_channels = cfg.MODEL.FPN.OUT_CHANNELS
+    backbone = GridFPN(
+        bottom_up=bottom_up,
+        in_features=in_features,
+        out_channels=out_channels,
+        norm=cfg.MODEL.FPN.NORM,
+        top_block=LastLevelMaxPool(),
+        fuse_type=cfg.MODEL.FPN.FUSE_TYPE,
+    )
+    return backbone
+
+# Register the function if not already registered
 if 'build_VGT_fpn_backbone' not in BACKBONE_REGISTRY._obj_map:
-    @BACKBONE_REGISTRY.register()
-    def build_VGT_fpn_backbone(cfg, input_shape: ShapeSpec):
-        """
-        Create a VIT w/ FPN backbone.
-
-        Args:
-            cfg: a detectron2 CfgNode
-
-        Returns:
-            backbone (Backbone): backbone module, must be a subclass of :class:`Backbone`.
-        """
-        bottom_up = build_PTM_VIT_Backbone(cfg)
-        in_features = cfg.MODEL.FPN.IN_FEATURES
-        out_channels = cfg.MODEL.FPN.OUT_CHANNELS
-        backbone = GridFPN(
-            bottom_up=bottom_up,
-            in_features=in_features,
-            out_channels=out_channels,
-            norm=cfg.MODEL.FPN.NORM,
-            top_block=LastLevelMaxPool(),
-            fuse_type=cfg.MODEL.FPN.FUSE_TYPE,
-        )
-        return backbone
+    BACKBONE_REGISTRY.register(build_VGT_fpn_backbone)

@@ -4,6 +4,8 @@ from pathlib import Path
 
 
 SRC_PATH = Path(__file__).parent.absolute()
+print("SRC_PATH", SRC_PATH)
+print("path to file", Path(__file__))
 # ROOT_PATH = Path(__file__).parent.parent.absolute()
 ROOT_PATH = SRC_PATH
 

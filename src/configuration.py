@@ -4,7 +4,8 @@ from pathlib import Path
 
 
 SRC_PATH = Path(__file__).parent.absolute()
-ROOT_PATH = Path(__file__).parent.parent.absolute()
+# ROOT_PATH = Path(__file__).parent.parent.absolute()
+ROOT_PATH = SRC_PATH
 
 handlers = [logging.StreamHandler()]
 logging.root.handlers = []

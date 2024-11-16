@@ -5,8 +5,8 @@ from fastapi.responses import PlainTextResponse
 from starlette.concurrency import run_in_threadpool
 from catch_exceptions import catch_exceptions
 from configuration import service_logger
-from pdf_layout_analysis.get_xml import get_xml
-from pdf_layout_analysis import analyze_pdf, analyze_pdf_fast
+from .pdf_layout_analysis.get_xml import get_xml
+from .pdf_layout_analysis import analyze_pdf, analyze_pdf_fast
 from text_extraction.get_text_extraction import get_text_extraction
 from toc.get_toc import get_toc
 from visualization.get_visualization import get_visualization

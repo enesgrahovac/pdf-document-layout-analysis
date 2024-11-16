@@ -1,6 +1,6 @@
 from statistics import mode
-from ..pdf_features import PdfToken, Rectangle
-from ..pdf_token_type_labels import TokenType
+from src.pdf_features import PdfToken, Rectangle
+from src.pdf_token_type_labels import TokenType
 
 
 class PdfSegment:

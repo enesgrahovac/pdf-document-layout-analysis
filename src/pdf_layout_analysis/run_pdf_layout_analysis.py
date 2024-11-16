@@ -3,7 +3,7 @@ import uuid
 from os.path import join
 from pathlib import Path
 from typing import AnyStr
-from data_model import SegmentBox, PdfImages
+from ..data_model import SegmentBox, PdfImages
 from ditod.VGTTrainer import VGTTrainer
 from extraction_formats.extract_formula_formats import extract_formula_format
 from extraction_formats.extract_table_formats import extract_table_format
